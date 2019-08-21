@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-center">
+  <div class="card" style="width: 50%; height: 50%;">
+    <div class="card-body" style="text-align: center; ">
+      <h3>Editar Postagem</h3>
+      <hr>
+      <form action="/main/posts/edit" method="post">
+        <input type="hidden" value="{{post._id}}" name="id">
+        <label for="title">Title:</label>
+        <input type="text" name="title" value="{{post.title}}" class="form-control">
+        <label for="GitHub">GitHub:</label>
+        <input type="text" name="github" value="{{post.github}}" class="form-control">
+        <label for="GitHub">Post Slug:</label>
+        <input type="text" name="postslug" value="{{post.postslug}}" class="form-control">
+        <label for="category">Categories:</label><br>
+        <select name="categories">
+          {{#each categories}}
+            <option value="{{_id}}">
+              {{nome}}
+            </option>
+          {{else}}
+          {{/each}}
+        </select><br>
+        <label for="desc">Description: </label>
+        <input type="text" name="desc" value="{{post.desc}}" class="form-control">
+        <button type="submit" name="button" class="btn btn-success">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>

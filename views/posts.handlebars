@@ -1,0 +1,20 @@
+<h2 style="text-align: center;">Posts:</h2>
+<hr>
+<div class="d-flex justify-content-center">
+  {{#each post}}
+  <input type="hidden" name="" value="{{_id}}" class="">
+  <div class="card d-flex d-inline-flex" style="width: 33; height: 33%;">
+    <div class="card-body">
+      <h3>Titulo: {{title}}</h3>
+        <h4>Categoria: {{category.nome}}</h4>
+        <h4>Slug: {{postslug}}</h4>
+        <h4>Data de criação: {{date}}</h4>
+        <h4>Descrição: {{desc}}</h4>
+        <h4>GitHub: {{github}}</h4>
+        <hr>
+        <a href="/main/post/{{postslug}}"><button class="btn btn-success" name="button">Leia Mais</button></a>
+    </div>
+  </div>
+  {{else}}
+  {{/each}}
+</div>

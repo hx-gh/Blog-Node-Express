@@ -1,0 +1,33 @@
+<div class="jumbotron">
+  <h1 class="display-4">Primeira Aplicação em Node.Js</h1>
+  <p class="lead">Seja bem-vindo ao meu primeiro projeto criado com Node.Js</p>
+  <hr class="my-4">
+  <p>Ele usa classes utilitárias para tipografia e espaçamento de conteúdo, dentro do maior container.</p>
+  <hr>
+  {{#if user}}
+
+  {{else}}
+  <a class="btn btn-primary btn-lg d-flex d-inline-flex" href="/user/newaccount" role="button">Crie Sua Conta</a>
+  <a class="btn btn-primary btn-lg d-flex d-inline-flex" href="/user/login" role="button">Login</a>
+  {{/if}}
+</div>
+<h1 style="text-align: center;">Posts</h1>
+<hr style="width: 66%;">
+<div class="d-flex justify-content-center">
+  {{#each post}}
+    <div class="card d-flex d-inline-flex" style="width: 30%; height: auto">
+      <div class="card-body mt-4" style="text-align: center;">
+        <h3>Nome: {{title}}</h3>
+          <h4>Categoria: {{category.nome}}</h4>
+          <h4>Slug: {{postslug}}</h4>
+          <h4>Data de criação: {{date}}</h4>
+          <h4>Descrição: {{desc}}</h4>
+          <h4>GitHub: {{github}}</h4>
+          <hr>
+          <a href="/main/post/{{postslug}}"><button class="btn btn-success" name="button">Leia Mais</button></a>
+      </div>
+    </div>
+  {{else}}
+    <h3>Nenhuma postagem registrada!</h3>
+  {{/each}}
+</div>

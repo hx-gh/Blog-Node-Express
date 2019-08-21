@@ -1,0 +1,24 @@
+<h2 style="text-align: center;">Categorias:</h2>
+<hr style="width: 66%;">
+<div class="d-flex justify-content-center">
+  {{#each categorias}}
+    <div class="card d-flex d-inline-flex" style="width: 30%; height: 30%;">
+      <div class="card-body mt-4">
+        <h3>Categoria: {{nome}}</h3>
+          <h4>Slug: {{slug}}</h4>
+          <h4>Data de criação: {{date}}</h4>
+          <a href="/main/categories/edit/{{_id}}"><button class="btn btn-success mt-4" name="button">Editar Categoria</button></a>
+          <form action="/main/categories/delete" method="POST" class="mt-2">
+            <input type="hidden" name="id" value="{{_id}}">
+            <button type="submit" class="btn btn-danger"name="button">Deletar</button>
+          </form>
+      </div>
+    </div>
+  {{else}}
+
+  {{/each}}
+</div>
+<hr style="width: 66%">
+<div class="d-flex justify-content-center">
+  <a href="/main/addcategory"> <button class="btn btn-success mt-4 d-flex">Nova Categoria</button></a>
+</div>

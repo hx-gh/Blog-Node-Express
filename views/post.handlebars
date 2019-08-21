@@ -1,0 +1,14 @@
+{{#if post}}
+<input type="hidden" name="" value="{{_id}}" class="">
+<div class="card d-flex justify-content-center d-inline-flex">
+  <div class="card-body">
+    <h3>Titulo: {{post.title}}</h3>
+      <h4>Categoria: {{post.category}}</h4>
+      <h4>Slug: {{post.postslug}}</h4>
+      <h4>Data de criação: {{post.date}}</h4>
+      <h4>Descrição: {{post.desc}}</h4>
+      <h4>GitHub: {{post.github}}</h4>
+  </div>
+</div>
+{{else}}
+{{/if}}

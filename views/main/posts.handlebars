@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-center">
+  {{#each posts}}
+    <div class="card d-flex d-inline-flex" style="width: 30%; height: auto;">
+      <div class="card-body mt-4">
+        <h3>{{title}}</h3>
+          <h5>Categoria: {{category.nome}}</h5>
+          <h5>Slug: {{postslug}}</h5>
+          <small>Data de criação: {{date}}</small>
+          <h4>Descrição: {{desc}}</h4>
+          <h5>GitHub: {{github}}</h5>
+          <hr>
+          <a href="/main/posts/edit/{{_id}}"><button type="submit" name="" class="btn btn-success mt-2">Editar Postagem</button></a>
+          <form action="/main/posts/delete" method="POST"  class="mt-2">
+            <input type="hidden" name="id" value="{{_id}}">
+            <button type="submit" class="btn btn-danger"name="button">Deletar</button>
+          </form>
+      </div>
+    </div>
+  {{else}}
+    <h3>Nenhuma postagem registrada!</h3>
+  {{/each}}
+</div>
+<hr style="width:66%;">
+<a href="/main/posts/addpost" class="d-flex justify-content-center"><button name="button" class="btn btn-success">Novo Post</button></a>

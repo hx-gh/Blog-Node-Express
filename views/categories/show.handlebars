@@ -1,0 +1,17 @@
+<h1>{{category.nome}}</h1>
+<hr>
+{{#each post}}
+  <div class="card d-flex justify-content-center d-inline-flex" style="width: 30%; height: 30%;">
+    <div class="card-body mt-4" style="text-align: center;">
+      <h3>Nome: {{title}}</h3>
+        <h4>Slug: {{postslug}}</h4>
+        <h4>Data de criação: {{date}}</h4>
+        <h4>Descrição: {{desc}}</h4>
+        <h4>GitHub: {{github}}</h4>
+        <hr>
+        <a href="/main/post/{{postslug}}"><button class="btn btn-success" name="button">Leia Mais</button></a>
+    </div>
+  </div>
+{{else}}
+  <h3>Nenhuma postagem registrada!</h3>
+{{/each}}

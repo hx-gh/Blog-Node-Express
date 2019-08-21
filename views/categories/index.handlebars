@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-center">
+  {{#each category}}
+  <div class="card d-flex d-inline-flex mt-1" style="width: 30%; height: 30%;">
+    <div class="card-body">
+      <h2>{{nome}}</h2>
+      <hr>
+      <h3>Slug: {{slug}}</h3>
+      <h4>Data: {{date}}</h4>
+      <br>
+      <hr style="width: 66%;">
+      <form class="" action="/categorias/{{slug}}" method="post">
+        <input type="hidden" name="" value="{{_id}}">
+        <div class="d-flex justify-content-center">
+          <button type="submit" name="button" class="btn btn-success">Veja Mais</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  {{else}}
+
+
+  {{/each}}
+</div>
